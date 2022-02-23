@@ -6,6 +6,10 @@ inputs:
     required: true
     description: 'input description here'
     default: 'default value if applicable'
+  astree_csv_result:
+    required: true
+    description: 'Astree results in csv format'
+    default: 'astree-results.csv'
 runs:
   using: 'node12'
   main: 'dist/index.js'

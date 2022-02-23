@@ -1,5 +1,8 @@
 import * as core from '@actions/core'
 import {wait} from './wait'
+import {AstreeCSVReport} from './astree/AstreeCSVReport'
+
+//const astreeCsvFile: AstreeCSVReport = parseAstreeInputs()
 
 async function run(): Promise<void> {
   try {
@@ -14,6 +17,10 @@ async function run(): Promise<void> {
   } catch (error) {
     if (error instanceof Error) core.setFailed(error.message)
   }
+}
+
+function parseAstreeInputs(): AstreeCSVReport {
+  return new AstreeCSVReport(core.getInput('astree_csv_result'))
 }
 
 run()
